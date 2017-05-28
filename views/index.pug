@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    
+    .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12
+    
+      .col-xl-3.col-lg-6.col-md-12.col-sm-12.col-xs-12
+     
+      .col-xl-6.col-lg-6.col-md-12.col-sm-12.col-xs-12
+          br
+          .card
+              .card-header
+                  h3="Add html document"
+              .card-block
+                  form( action="/", method="post", encType="multipart/form-data" )
+                      input.form-control( type="text", name="name", placeholder="Html Document Name" )
+                      input.form-control( type="file", name="file" )
+                      input.btn.btn-primary.btn-block( type="submit", value="Submit" )
+                  if status === 1
+                    br
+                    .alert.alert-success(role='alert')
+                        strong= "Successful!"
+                    center
+                      a.btn.btn-primary.btn-lg( href=`file/${name}.html` download)= "Html Download"
+
+
+      .col-xl-3.col-lg-6.col-md-12.col-sm-12.col-xs-12
